@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Projeto 01</title>
+		<link rel="icon" href="carro.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+
+
+
+	</head>
+	<body>
+
+
+		<header>
+			<div class="container">
+				<h1 class="titulo">Custo Benefício </h1>
+			</div>
+		</header>
+		<main>
+			<section class="container">
+				<h2 class="cliente">Tabela</h2>
+
+				<table>
+					<thead>
+						<tr>
+							<th>Modelo</th>
+							<th>Valor do combustível</th>
+							<th>km/l</th>
+							<th>Quilometragem</th>
+							<th>Consumo em litros</th>
+							<th>Gasto em Reais</th>
+						</tr>
+					</thead>
+					<tbody id="tabela-pacientes">
+						<tr class="veículo" id="primeiro" >
+							<td class="info-modelo">Renault Kwid</td>
+							<td class="info-valor">4.21</td>
+							<td class="info-kml">14.8</td>
+							<td class="info-quilometragem">100</td>
+							<td class="info-consumo">0</td>
+							<td class="info-gasto">100</td>
+						</tr>
+
+						<tr class="veículo" id="segundo" >
+							<td class="info-modelo">Chevrolet Onix LT </td>
+							<td class="info-valor">4.21</td>
+							<td class="info-kml">12.9</td>
+							<td class="info-quilometragem">100</td>
+							<td class="info-consumo">0</td>
+							<td class="info-gasto">100</td>
+						</tr>
+
+						<tr class="veículo" id="terceiro" >
+							<td class="info-modelo">Honda CG 160</td>
+							<td class="info-valor">4.21</td>
+							<td class="info-kml">35</td>
+							<td class="info-quilometragem">100</td>
+							<td class="info-consumo">0</td>
+							<td class="info-gasto">100</td>
+						</tr>
+
+						<tr class="veículo" id="quarto">
+							<td class="info-modelo">KTM 390 Duke</td>
+							<td class="info-valor">4.21</td>
+							<td class="info-kml">21</td>
+							<td class="info-quilometragem">100</td>
+							<td class="info-consumo">0</td>
+							<td class="info-gasto">100</td>
+						</tr>
+
+
+						<script>
+							var veículos = document.querySelectorAll(".veículo");
+              for (var i = 0; i < veículos.length; i++) {
+
+                  var veículo01 = veículos[i]
+                  var valor01 = veículo01.querySelector(".info-valor")
+                  var kml01 = veículo01.querySelector(".info-kml")
+                  var quilometragem01 = veículo01.querySelector(".info-quilometragem")
+
+                  var valor = valor01.textContent
+                  var kml = kml01.textContent
+                  var quilometragem = quilometragem01.textContent
+                  var litros = quilometragem / kml
+                  var gasto = litros * valor
+
+                  var consumo01 = veículo01.querySelector(".info-consumo")
+                  consumo01.textContent = litros.toFixed(2)
+                  var gasto01 = veículo01.querySelector(".info-gasto")
+                  gasto01.textContent = gasto.toFixed(2)
+
+              }
+
+
+
+						</script>
+
+					</tbody>
+				</table>
+
+			</section>
+		</main>
+
+	</body>
+</html>
